@@ -1,0 +1,78 @@
+<nav class="navbar navbar-expand-md navbar-dark bg-dark">
+  <div class="container-md">
+    <!-- Logo -->
+    <a class="navbar-brand" href="#">
+  <img src="/img/logo.webp" alt="Nexus" height="70">
+    </a>
+
+    <!-- Botón hamburguesa -->
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#navbarNav"
+      aria-controls="navbarNav"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <!-- Menú -->
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a
+            class="nav-link"
+            [class.active]="enlaceActivo === 'inicio'"
+            (click)="activar('inicio')"
+            href="#"
+          >
+            Inicio
+          </a>
+        </li>
+        <li class="nav-item">
+          <a
+            class="nav-link"
+            [class.active]="enlaceActivo === 'novedades'"
+            (click)="activar('novedades'); $event.preventDefault()"
+            href="#novedades"
+          >
+            Novedades
+          </a>
+        </li>
+        <li class="nav-item">
+          <a
+            class="nav-link"
+            [class.active]="enlaceActivo === 'masvendidos'"
+            (click)="activar('masVendidos'); $event.preventDefault()"
+            href="#masVendidos"
+          >
+            Más vendidos
+          </a>
+        </li>
+        <li class="nav-item">
+          <a
+            class="nav-link"
+            (click)="abrirPreguntasFrecuentes()"
+            href="#"
+            data-bs-toggle="modal"
+            data-bs-target="#faqModal"
+          >
+            Preguntas frecuentes
+          </a>
+        </li>
+        <app-preguntas-frecuentes></app-preguntas-frecuentes>
+        <li class="nav-item">
+          <a
+            class="nav-link"
+            (click)="activar('cuenta')"
+            href="login.html"
+          >
+            Mi cuenta
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
