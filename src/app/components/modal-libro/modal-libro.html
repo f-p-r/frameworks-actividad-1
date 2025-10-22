@@ -19,10 +19,14 @@
         <!-- Información principal -->
         <div class="col-md-5">
           <h4>{{ libro.titulo }}</h4>
-          <p class="autor text-primary">{{ libro.autor }}</p>
-          <p><strong>Editorial:</strong> {{ libro.editorial }}</p>
-          <p><strong>Año de edición:</strong> {{ libro.anio }}</p>
-          <p><strong>Precio:</strong> {{ libro.precio | currency:'EUR' }}</p>
+          <p class="autor text-primary mb-4">{{ libro.autor }}</p>
+          <p class="mb-1"><strong>Editorial:</strong> {{ libro.editorial }}</p>
+          <p class="mb-1"><strong>Año de edición:</strong> {{ libro.anio }}</p>
+          <p class="mb-1"><strong>Materia:</strong> {{ libro.materia }}</p>
+          <p class="mb-1"><strong>ISBN:</strong> {{ libro.isbn }}</p>
+          <p class="mb-1"><strong>Precio:</strong> {{ libro.precio | currency:'EUR' }}</p>
+          <hr />
+          <p class="small text-muted">{{ libro.descripcion }}</p>
         </div>
 
         <!-- Botones -->

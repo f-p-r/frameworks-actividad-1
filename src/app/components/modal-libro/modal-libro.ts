@@ -12,7 +12,7 @@ import { CompraService } from '../../services/compra';
 })
 export class ModalLibro {
   @Input() libro: Libro | null = null;
-  @Output() cerrar = new EventEmitter<void>(); // 🔹 el padre sabrá cuándo cerrar
+  @Output() cerrar = new EventEmitter<void>();
   pestana: 'sinopsis' | 'resenas' = 'sinopsis';
 
   constructor(private compraService: CompraService) {}
@@ -24,8 +24,8 @@ export class ModalLibro {
     }
   }
 
+  /** Cierra el modal y notifica al componente padre */
   onCerrar() {
-    this.cerrar.emit(); // 🔹 avisa al padre
+    this.cerrar.emit();
   }
 }
-

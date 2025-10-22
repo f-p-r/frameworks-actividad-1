@@ -13,6 +13,7 @@ export interface Libro {
   resenas: string;
   novedad: boolean;
   masVendido: boolean;
+  isbn: string;
 }
 
 @Injectable({
@@ -35,7 +36,8 @@ export class LibrosService {
         sinopsis: 'En una pequeña aldea costera, una joven descubre un antiguo secreto familiar escondido entre agujas y recuerdos. Entre generaciones y tradiciones, el pasado cobra vida a través de los hilos que cosen la memoria.',
         resenas: '“Una novela conmovedora y elegante.” – El País\n“Lucía Chacón firma su mejor obra hasta la fecha.” – ABC',
         novedad: true,
-        masVendido: false
+        masVendido: false,
+        isbn: '978-84-123456-01-1'
       },
       {
         id: 2,
@@ -49,7 +51,8 @@ export class LibrosService {
         sinopsis: 'Un niño vive encerrado con su familia en un sótano iluminado solo por luciérnagas. Poco a poco descubrirá que su mundo no es lo que parece y que el verdadero peligro está más cerca de lo que imagina.',
         resenas: '“Oscura y fascinante.” – Goodreads\n“Un thriller psicológico de altura.” – La Vanguardia',
         novedad: false,
-        masVendido: true
+        masVendido: true,
+        isbn: '978-84-123456-02-8'
       },
       {
         id: 3,
@@ -63,7 +66,8 @@ export class LibrosService {
         sinopsis: 'En el Colegio de Guerra de Basgiath, solo los más fuertes sobreviven. Violet Sorrengail deberá elegir entre seguir las reglas o convertirse en leyenda.',
         resenas: '“Una fantasía trepidante que enamora desde la primera página.” – The Guardian',
         novedad: true,
-        masVendido: true
+        masVendido: true,
+        isbn: '978-84-123456-03-5'
       },
       {
         id: 4,
@@ -77,7 +81,8 @@ export class LibrosService {
         sinopsis: 'Cuando el pasado regresa para recordarte lo que perdiste, el corazón se enfrenta a la decisión más difícil: volver a sentir o seguir huyendo.',
         resenas: '“Inma Rubiales vuelve a emocionar con una historia inolvidable.” – HarperCollins',
         novedad: false,
-        masVendido: true
+        masVendido: true,
+        isbn: '978-84-123456-04-2'
       },
       {
         id: 5,
@@ -91,7 +96,8 @@ export class LibrosService {
         sinopsis: 'Una serie de asesinatos en Catania pondrá a prueba la intuición de Vanina Guarrasi, una mujer que esconde más secretos que los propios criminales.',
         resenas: '“Un noir mediterráneo vibrante y adictivo.” – La Repubblica',
         novedad: true,
-        masVendido: false
+        masVendido: false,
+        isbn: '978-84-123456-05-9'
       },
       {
         id: 6,
@@ -105,7 +111,8 @@ export class LibrosService {
         sinopsis: 'Johnny y Shannon intentan reconstruir su relación mientras los secretos del pasado amenazan con destruirlo todo.',
         resenas: '“La historia más intensa de la serie Tommen.” – Goodreads',
         novedad: false,
-        masVendido: true
+        masVendido: true,
+        isbn: '978-84-123456-06-6'
       },
       {
         id: 7,
@@ -119,7 +126,8 @@ export class LibrosService {
         sinopsis: 'Lo que compartes puede cambiar tu vida. Pero lo que callas puede destruirla.',
         resenas: '“Eloy Moreno vuelve a ofrecernos un espejo de nuestra sociedad.” – El Mundo',
         novedad: true,
-        masVendido: false
+        masVendido: false,
+        isbn: '978-84-123456-07-3'
       },
       {
         id: 8,
@@ -133,10 +141,10 @@ export class LibrosService {
         sinopsis: 'Cuando Nora recibe un misterioso amuleto, descubre que puede comunicarse con los animales y deberá proteger su secreto de quienes quieren aprovecharse de su poder.',
         resenas: '“Una historia tierna, emocionante y llena de magia.” – PequeLectores',
         novedad: false,
-        masVendido: true
+        masVendido: true,
+        isbn: '978-84-123456-08-0'
       }
     ];
-
   }
 
   // 🔹 Métodos públicos
