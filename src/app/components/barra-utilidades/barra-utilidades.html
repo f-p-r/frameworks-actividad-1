@@ -1,5 +1,8 @@
 <div class="container mt-3">
-  <form class="row g-2 align-items-center" (submit)="onBuscar()">
+  <form
+    class="row g-2 align-items-center"
+    (submit)="onBuscar(); $event.preventDefault()"
+  >
     <div class="col-12 col-md-auto">
       <input
         class="form-control form-control-sm"
@@ -17,14 +20,14 @@
     </div>
 
     <div class="col-12 col-md-auto">
-      <a
-        href="#"
+      <button
+        type="button"
         class="btn btn-link btn-sm text-muted"
         style="font-size: 0.8rem;"
         (click)="abrirBusquedaAvanzada()"
       >
         Búsqueda avanzada
-      </a>
+      </button>
     </div>
 
     <div class="col-12 col-md-auto ms-auto">
@@ -37,7 +40,12 @@
       </button>
     </div>
   </form>
-
-  <!-- Modal de Mi Compra -->
-  <app-mi-compra></app-mi-compra>
 </div>
+
+<!-- Modales -->
+<app-busqueda-avanzada
+  #busquedaAvanzada
+  (buscarAvanzado)="buscar.emit($event)"
+></app-busqueda-avanzada>
+
+<app-mi-compra #miCompra></app-mi-compra>

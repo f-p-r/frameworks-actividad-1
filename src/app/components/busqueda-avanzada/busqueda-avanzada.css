@@ -1,3 +1,4 @@
+/* Fondo semitransparente detrás del modal */
 .modal-backdrop {
   position: fixed;
   inset: 0;
@@ -8,6 +9,7 @@
   animation: fadeIn 0.25s forwards;
 }
 
+/* Contenedor del modal centrado */
 .modal-container {
   position: fixed;
   top: 50%;
@@ -17,34 +19,19 @@
   border-radius: 0.75rem;
   z-index: 1050;
   width: 90%;
-  max-width: 700px;
+  max-width: 600px;
   box-shadow: 0 8px 25px rgba(0, 0, 0, 0.25);
   opacity: 0;
   animation: zoomIn 0.25s forwards;
 }
 
+/* Contenido interno */
 .modal-content {
   background-color: #fff;
   border-radius: 0.75rem;
-  position: relative;
 }
 
-.btn-cerrar {
-  position: absolute;
-  top: 0.5rem;
-  right: 0.75rem;
-  border: none;
-  background: transparent;
-  font-size: 1.5rem;
-  color: #999;
-  cursor: pointer;
-  transition: color 0.2s;
-}
-
-.btn-cerrar:hover {
-  color: #333;
-}
-
+/* Animaciones */
 @keyframes fadeIn {
   to {
     opacity: 1;
@@ -55,5 +42,17 @@
   to {
     opacity: 1;
     transform: translate(-50%, -50%) scale(1);
+  }
+}
+
+/* Ajustes responsive */
+@media (max-width: 576px) {
+  .modal-container {
+    width: 95%;
+    padding: 0.5rem;
+  }
+
+  .modal-content {
+    padding: 0.5rem;
   }
 }

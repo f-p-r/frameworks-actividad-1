@@ -30,13 +30,21 @@ export class App {
     }
   }
 
-  onBuscar(termino: string) {
-    if (termino.trim() === '') {
-      this.titulo = 'Novedades';
-      this.libros = this.librosService.getNovedades();
-    } else {
-      this.titulo = `Resultados para "${termino}"`;
-      this.libros = this.librosService.buscarLibros(termino);
+  onBuscar(param: any) {
+    if (typeof param === 'string') {
+      // 🔹 Búsqueda simple
+      const termino = param.trim();
+      if (termino === '') {
+        this.titulo = 'Novedades';
+        this.libros = this.librosService.getNovedades();
+      } else {
+        this.titulo = `Resultados para "${termino}"`;
+        this.libros = this.librosService.buscarLibros(termino);
+      }
+    } else if (typeof param === 'object' && param !== null) {
+      // 🔹 Búsqueda avanzada
+      this.titulo = 'Resultado de la búsqueda avanzada';
+      this.libros = this.librosService.buscarAvanzado(param);
     }
   }
 }
