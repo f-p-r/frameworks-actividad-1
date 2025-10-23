@@ -1,27 +1,44 @@
 /* Contenedor general */
 .landing-container {
-  font-family: Tahoma, sans-serif; /* 👈 fuente base para todo el texto */
-  color: #212529;
+  font-family: "Tahoma", sans-serif;
 }
 
-/* Título principal */
+/* Título */
 .landing-title {
-  font-family: "Source Serif 4", serif; /* 👈 fuente distinta para títulos */
-  font-weight: 700;
-  font-size: 1.8rem;
+  font-family: "Source Serif 4", serif;
+  font-size: 2rem;
+  color: #000;
 }
 
-/* Texto de párrafos */
-.landing-text {
-  font-size: 1.2rem;
-  line-height: 1.6;
-  text-align: left;
-}
-
-/* Imagen */
+/* Imagen dentro del texto */
 .landing-img {
-  max-width: 100%;
-  height: auto;
+  float: right;
+  width: 50%;
+  margin-left: 1.5rem;  /* espacio entre imagen y texto */
+  margin-bottom: 1rem;  /* espacio inferior */
   border-radius: 0.5rem;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.15);
+}
+
+/* Texto */
+.landing-text {
+  font-size: 1.1rem;
+  line-height: 1.7;
+  text-align: justify;
+  margin-bottom: 1rem;
+}
+
+/* Responsive: en móviles la imagen y el texto se apilan */
+@media (max-width: 768px) {
+  .landing-img {
+    float: none;
+    display: block;
+    width: 100%;
+    margin: 0 auto 1.5rem auto; /* centrada y separada del texto */
+    padding: 0;
+  }
+
+  .landing-text {
+    text-align: left;
+  }
 }
