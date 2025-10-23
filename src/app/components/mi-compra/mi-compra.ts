@@ -1,11 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { CompraService, ItemCompra } from '../../services/compra';
+import { PrecioEuroPipe } from '../../pipes/precio-euro-pipe';
 
 @Component({
   selector: 'app-mi-compra',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, PrecioEuroPipe],
   templateUrl: './mi-compra.html',
   styleUrl: './mi-compra.css'
 })

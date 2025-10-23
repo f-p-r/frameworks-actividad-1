@@ -23,7 +23,7 @@
               <p class="fw-bold mb-1">{{ item.libro.titulo }}</p>
               <p class="text-muted mb-1">{{ item.libro.autor }}</p>
               <p class="mb-1">
-                Precio: {{ item.libro.precio | currency: 'EUR' }}
+                Precio: {{ item.libro.precio | precioEuro }}
               </p>
 
               <div class="d-flex align-items-center">
@@ -47,7 +47,7 @@
         }
 
         <div class="text-end mt-3">
-          <h5>Total: {{ total | currency: 'EUR' }}</h5>
+          <h5>Total: {{ total | precioEuro }}</h5>
           <button class="btn btn-primary me-2" (click)="aplicarCompra()">
             Aplicar
           </button>

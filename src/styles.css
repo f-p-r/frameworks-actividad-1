@@ -82,3 +82,16 @@
 .card-text {
     font-size: 0.875rem;
 }
+
+/* Fuente base para todo el texto */
+body, html {
+  font-family: Tahoma, sans-serif;
+  color: #212529;
+}
+
+/* Fuente específica para títulos */
+h1, h2, h3, h4, h5, h6 {
+  font-family: "Source Serif 4", serif;
+  font-weight: 700;
+  color: #212529;
+}

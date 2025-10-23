@@ -1,0 +1,27 @@
+/* Contenedor general */
+.landing-container {
+  font-family: Tahoma, sans-serif; /* 👈 fuente base para todo el texto */
+  color: #212529;
+}
+
+/* Título principal */
+.landing-title {
+  font-family: "Source Serif 4", serif; /* 👈 fuente distinta para títulos */
+  font-weight: 700;
+  font-size: 1.8rem;
+}
+
+/* Texto de párrafos */
+.landing-text {
+  font-size: 1rem;
+  line-height: 1.6;
+  text-align: left;
+}
+
+/* Imagen */
+.landing-img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 0.5rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}

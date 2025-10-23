@@ -1,8 +1,8 @@
 <nav class="navbar navbar-expand-md navbar-dark bg-dark">
   <div class="container-md">
     <!-- Logo -->
-    <a class="navbar-brand" href="#">
-  <img src="/img/logo.webp" alt="Nexus" height="70">
+    <a class="navbar-brand" href="#" (click)="activar('inicio'); $event.preventDefault()">
+      <img src="/img/logo.webp" alt="Nexus" height="70" />
     </a>
 
     <!-- Botón hamburguesa -->
@@ -24,55 +24,62 @@
         <li class="nav-item">
           <a
             class="nav-link"
-            [class.active]="enlaceActivo === 'inicio'"
-            (click)="activar('inicio')"
             href="#"
+            [class.active]="enlaceActivo === 'inicio'"
+            (click)="activar('inicio'); $event.preventDefault()"
           >
             Inicio
           </a>
         </li>
+
         <li class="nav-item">
           <a
             class="nav-link"
+            href="#"
             [class.active]="enlaceActivo === 'novedades'"
             (click)="activar('novedades'); $event.preventDefault()"
-            href="#novedades"
           >
             Novedades
           </a>
         </li>
+
         <li class="nav-item">
           <a
             class="nav-link"
-            [class.active]="enlaceActivo === 'masvendidos'"
+            href="#"
+            [class.active]="enlaceActivo === 'masVendidos'"
             (click)="activar('masVendidos'); $event.preventDefault()"
-            href="#masVendidos"
           >
             Más vendidos
           </a>
         </li>
+
         <li class="nav-item">
           <a
             class="nav-link"
-            (click)="abrirPreguntasFrecuentes()"
             href="#"
-            data-bs-toggle="modal"
-            data-bs-target="#faqModal"
+            [class.active]="enlaceActivo === 'faq'"
+            (click)="activar('faq'); $event.preventDefault()"
           >
             Preguntas frecuentes
           </a>
         </li>
-        <app-preguntas-frecuentes></app-preguntas-frecuentes>
+        <!-- POR AHORA EL LOGIN NO SE IMPLEMENTA ---
         <li class="nav-item">
           <a
             class="nav-link"
-            (click)="activar('cuenta')"
             href="login.html"
+            [class.active]="enlaceActivo === 'cuenta'"
+            (click)="activar('cuenta')"
           >
             Mi cuenta
           </a>
         </li>
+      -->
       </ul>
     </div>
+
+    <!-- Modal de Preguntas Frecuentes -->
+    <app-preguntas-frecuentes></app-preguntas-frecuentes>
   </div>
 </nav>

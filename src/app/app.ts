@@ -4,47 +4,57 @@ import { BarraUtilidades } from './components/barra-utilidades/barra-utilidades'
 import { Carousel } from './components/carousel/carousel';
 import { ListaLibros } from './components/lista-libros/lista-libros';
 import { Libro, LibrosService } from './services/libros';
+import { Landing } from './components/landing/landing';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [Navbar, BarraUtilidades, Carousel, ListaLibros],
+  imports: [Navbar, BarraUtilidades, Carousel, ListaLibros, Landing],
   templateUrl: './app.html',
   styleUrl: './app.css'
 })
 export class App {
-  titulo = 'Novedades';
+  vista: 'inicio' | 'libros' = 'inicio'; // vista actual
+  titulo = '';                           // solo se muestra en "libros"
   libros: Libro[] = [];
 
-  constructor(private librosService: LibrosService) {
-    this.libros = this.librosService.getNovedades();
+  constructor(private librosService: LibrosService) {}
+
+  // ✅ Mostrar pantalla de inicio
+  mostrarInicio() {
+    this.vista = 'inicio';
+    this.titulo = '';
+    this.libros = [];
   }
 
-  onCambiarCategoria(tipo: 'novedades' | 'masVendidos') {
-    if (tipo === 'novedades') {
-      this.titulo = 'Novedades';
-      this.libros = this.librosService.getNovedades();
-    } else {
-      this.titulo = 'Más vendidos';
-      this.libros = this.librosService.getMasVendidos();
-    }
+  // ✅ Mostrar lista de libros
+  mostrarLibros(titulo: string, lista: Libro[]) {
+    this.titulo = titulo;
+    this.libros = lista;
+    this.vista = 'libros';
   }
 
+  // ✅ Desde Navbar
+  onNovedades() {
+    this.mostrarLibros('Novedades', this.librosService.getNovedades());
+  }
+
+  onMasVendidos() {
+    this.mostrarLibros('Más vendidos', this.librosService.getMasVendidos());
+  }
+
+  // ✅ Desde barra de utilidades (búsqueda)
   onBuscar(param: any) {
     if (typeof param === 'string') {
-      // 🔹 Búsqueda simple
       const termino = param.trim();
       if (termino === '') {
-        this.titulo = 'Novedades';
-        this.libros = this.librosService.getNovedades();
+        // Si se borra la búsqueda → volver al inicio
+        this.mostrarInicio();
       } else {
-        this.titulo = `Resultados para "${termino}"`;
-        this.libros = this.librosService.buscarLibros(termino);
+        this.mostrarLibros(`Resultados para "${termino}"`, this.librosService.buscarLibros(termino));
       }
     } else if (typeof param === 'object' && param !== null) {
-      // 🔹 Búsqueda avanzada
-      this.titulo = 'Resultado de la búsqueda avanzada';
-      this.libros = this.librosService.buscarAvanzado(param);
+      this.mostrarLibros('Resultados de búsqueda avanzada', this.librosService.buscarAvanzado(param));
     }
   }
 }
