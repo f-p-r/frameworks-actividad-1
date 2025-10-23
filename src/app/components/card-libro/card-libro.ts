@@ -1,11 +1,12 @@
 import { Component, Input, Output, EventEmitter } from '@angular/core';
 import { Libro } from '../../services/libros';
+import { CommonModule } from '@angular/common';
 import { PrecioEuroPipe } from '../../pipes/precio-euro-pipe';
 
 @Component({
   selector: 'app-card-libro',
   standalone: true,
-  imports: [PrecioEuroPipe],
+  imports: [CommonModule, PrecioEuroPipe],
   templateUrl: './card-libro.html',
   styleUrl: './card-libro.css'
 })

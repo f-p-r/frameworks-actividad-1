@@ -111,3 +111,12 @@
     overflow-y: auto;
   }
 }
+
+.etiqueta-novedad {
+  color: #d93025; /* rojo intenso */
+  font-weight: bold;
+  font-size: 1.1rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 0.5rem;
+}
