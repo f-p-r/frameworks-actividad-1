@@ -24,7 +24,7 @@
           <p class="mb-1"><strong>Año de edición:</strong> {{ libro.anio }}</p>
           <p class="mb-1"><strong>Materia:</strong> {{ libro.materia }}</p>
           <p class="mb-1"><strong>ISBN:</strong> {{ libro.isbn }}</p>
-          <p class="mb-1"><strong>Precio:</strong> {{ libro.precio | currency:'EUR' }}</p>
+          <p class="mb-1"><strong>Precio:</strong> {{ libro.precio | precioEuro }}</p>
           <hr />
           <p class="small text-muted">{{ libro.descripcion }}</p>
         </div>

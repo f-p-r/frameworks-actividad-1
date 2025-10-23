@@ -3,6 +3,6 @@
   <div class="card-body text-center">
     <h5 class="card-title">{{ libro.titulo }}</h5>
     <p class="card-text">{{ libro.autor }}</p>
-    <p class="card-text">{{ libro.precio | currency:'EUR':'symbol':'1.2-2' }}</p>
+    <p class="card-text">{{ libro.precio | precioEuro  }}</p>
   </div>
 </div>

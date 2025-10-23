@@ -2,11 +2,12 @@ import { Component, Input, Output, EventEmitter } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Libro } from '../../services/libros';
 import { CompraService } from '../../services/compra';
+import { PrecioEuroPipe } from '../../pipes/precio-euro-pipe';
 
 @Component({
   selector: 'app-modal-libro',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, PrecioEuroPipe],
   templateUrl: './modal-libro.html',
   styleUrl: './modal-libro.css'
 })
